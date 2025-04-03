@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EliteHome Control Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    <div class="gradient-overlay"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="brand-header">
+            <div class="brand-info">
+                <div class="brand-logo">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="brand-text">EliteHome Pro</div>
+            </div>
+            <div class="dashboard-controls">
+                <button class="control-btn" id="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="control-btn" id="notifications-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Appliance Grid -->
+        <div class="appliance-grid">
+            <!-- Philips Light -->
+            <div class="appliance-card" id="light-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--philips), #00a8f3);">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="appliance-name">Smart Light</div>
+                    <div class="appliance-brand">Philips Hue</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>45W • 2.3kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="light-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="light-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- Samsung AC -->
+            <div class="appliance-card" id="ac-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--samsung), #4b7bec);">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div class="appliance-name">Air Conditioner</div>
+                    <div class="appliance-brand">Samsung WindFree</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>1500W • 45.6kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="ac-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="ac-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- LG TV -->
+            <div class="appliance-card" id="tv-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--lg), #e84393);">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div class="appliance-name">OLED TV</div>
+                    <div class="appliance-brand">LG G3</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>120W • 8.4kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="tv-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="tv-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- Daikin Air Purifier -->
+            <div class="appliance-card" id="airpurifier-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--daikin), #00b4d8);">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="appliance-name">Air Purifier</div>
+                    <div class="appliance-brand">Daikin MC70</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>50W • 3.1kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="airpurifier-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="airpurifier-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- Whirlpool Fridge -->
+            <div class="appliance-card" id="fridge-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--whirlpool), #5f27cd);">
+                        <i class="fas fa-blender"></i>
+                    </div>
+                    <div class="appliance-name">Smart Fridge</div>
+                    <div class="appliance-brand">Whirlpool W11</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>200W • 14.6kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="fridge-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="fridge-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- Havells Water Cooler -->
+            <div class="appliance-card" id="cooler-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--havells), #ff6b6b);">
+                        <i class="fas fa-fan"></i>
+                    </div>
+                    <div class="appliance-name">Water Cooler</div>
+                    <div class="appliance-brand">Havells Altima</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>80W • 5.2kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="cooler-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="cooler-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- Sony Sound System -->
+            <div class="appliance-card" id="sound-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--sony), #555555);">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="appliance-name">Sound System</div>
+                    <div class="appliance-brand">Sony HT-A9</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>100W • 6.8kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="sound-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="sound-status" class="status off">OFF</div>
+                </div>
+            </div>
+
+            <!-- iRobot Vacuum -->
+            <div class="appliance-card" id="vacuum-card">
+                <div class="appliance-content">
+                    <div class="appliance-icon" style="background: linear-gradient(135deg, var(--irobot), #0097e6);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="appliance-name">Robot Vacuum</div>
+                    <div class="appliance-brand">iRobot J7+</div>
+                    <div class="power-consumption">
+                        <i class="fas fa-bolt"></i>
+                        <span>60W • 4.1kWh</span>
+                    </div>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="vacuum-toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div id="vacuum-status" class="status off">OFF</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scene Controls -->
+        <h3 style="margin-top: 30px; color: var(--text-light); font-weight: 600;">Quick Scenes</h3>
+        <div class="scene-controls">
+            <button class="scene-btn" id="good-morning">
+                <i class="fas fa-sun"></i> Morning
+            </button>
+            <button class="scene-btn" id="good-night">
+                <i class="fas fa-moon"></i> Night
+            </button>
+            <button class="scene-btn" id="movie-time">
+                <i class="fas fa-film"></i> Movie
+            </button>
+            <button class="scene-btn" id="away-mode">
+                <i class="fas fa-lock"></i> Away
+            </button>
+        </div>
+
+        <!-- Energy Summary -->
+        <div class="energy-summary">
+            <div class="energy-header">
+                <div class="energy-title">Energy Summary</div>
+                <div style="color: var(--text-dim); font-size: 0.9rem;">Today</div>
+            </div>
+            <div class="energy-stats">
+                <div class="energy-stat">
+                    <div class="stat-value">15.8 kWh</div>
+                    <div class="stat-label">Total Usage</div>
+                </div>
+                <div class="energy-stat">
+                    <div class="stat-value">₹ 142.20</div>
+                    <div class="stat-label">Cost</div>
+                </div>
+                <div class="energy-stat">
+                    <div class="stat-value">AC</div>
+                    <div class="stat-label">Highest Consumer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
